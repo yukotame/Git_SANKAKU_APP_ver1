@@ -3,8 +3,8 @@ package model;
 import java.util.ArrayList;
 
 /**----------------------------------------------------------------------*
- *■■■SurveyDtoクラス■■■
- *概要：DTO（「survey」テーブル）
+ *■■■ProjectPackDtoクラス■■■
+ *概要：DTO（「PROJECT」テーブル,「PROJECT_DATE」テーブル）
  *----------------------------------------------------------------------**/
 public class ProjectPackDto {
 

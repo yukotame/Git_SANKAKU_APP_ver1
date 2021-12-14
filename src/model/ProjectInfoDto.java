@@ -1,8 +1,8 @@
 package model;
 
 /**----------------------------------------------------------------------*
- *■■■SurveyDtoクラス■■■
- *概要：DTO（「survey」テーブル）
+ *■■■ProjectInfoDtoクラス■■■
+ *概要：DTO（「PROJECT」テーブル）
  *----------------------------------------------------------------------**/
 public class ProjectInfoDto {
 
@@ -10,7 +10,7 @@ public class ProjectInfoDto {
 	//フィールド
 	//----------------------------------------------------------------
 
-	private int    project_id;           //プロジェクトID
+	private int       project_id;           //プロジェクトID
 	private String    project_name;         //プロジェクト名
 	private String    originator_id ;       //発案者
 

@@ -1,12 +1,10 @@
 package model;
 
 /**----------------------------------------------------------------------*
- *■■■SurveyDtoクラス■■■
- *概要：DTO（「survey」テーブル）
+ *■■■ProjectDateDtoクラス■■■
+ *概要：DTO（「PROJECT_DATE」テーブル）
  *----------------------------------------------------------------------**/
 public class ProjectDateDto {
-
-
 
 	//----------------------------------------------------------------
 	//フィールド
@@ -30,7 +28,7 @@ public class ProjectDateDto {
 	public String getProjectName() { return project_name; }
 	public void setProjectName(String project_name) { this.project_name = project_name; }
 
-	//getter/setter（対象フィールド：date1）
+	//getter/setter（対象フィールド：project_date）
 	public String getProjectDate() { return project_date; }
 	public void setProjectDate(String project_date) { this.project_date = project_date; }
 

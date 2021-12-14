@@ -3,7 +3,7 @@ package model;
 
 /**----------------------------------------------------------------------*
  *■■■UserInfoDtoクラス■■■
- *概要：DTO（「user_info」テーブル）
+ *概要：DTO（「USER」テーブル）
  *----------------------------------------------------------------------**/
 public class UserInfoDto {
 
@@ -13,7 +13,7 @@ public class UserInfoDto {
 	private String userId;         //ユーザーID
 	private String userName;       //ユーザー名
 	private String passWord;       //ユーザーパスワード
-	private String email;       //ユーザーパスワード
+	private String email;          //メールアドレス
 
 
 	//----------------------------------------------------------------

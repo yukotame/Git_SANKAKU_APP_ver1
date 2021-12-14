@@ -1,8 +1,8 @@
 package model;
 
 /**----------------------------------------------------------------------*
- *■■■SurveyDtoクラス■■■
- *概要：DTO（「survey」テーブル）
+ *■■■UserParticipationDtoクラス■■■
+ *概要：DTO（「USER_PARTICIPATION」テーブル）
  *----------------------------------------------------------------------**/
 public class UserParticipationDto {
 
@@ -10,12 +10,12 @@ public class UserParticipationDto {
 	//フィールド
 	//----------------------------------------------------------------
 
-	private int    		project_id;           //プロジェクトID
-	private String    	project_name;         //プロジェクト名
-	private String     project_date;         //日付
-	private String     user_id;            //ユーザー名(参加候補者)
-	private String     user_name;            //ユーザー名(参加候補者)
-	private int        participation;
+	private int    		project_id;       //プロジェクトID
+	private String    	project_name;     //プロジェクト名
+	private String     project_date;     //日付
+	private String     user_id;          //ユーザー名(参加候補者ID)
+	private String     user_name;        //ユーザー名(参加候補者)
+	private int        participation;    //参加可否
 
 	//----------------------------------------------------------------
 	//getter/setter
