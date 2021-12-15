@@ -16,12 +16,12 @@
   <form action="<%=request.getContextPath()%>/UserRegisterServlet" method="post">
   <% UserInfoDto udto = (UserInfoDto)request.getAttribute("userInfo");%>
 
-  <p>名前： <br>
-  	<input type="text" name="NAME" maxlength = "20" id="ID_USER_NAME">
-  </p>
-
   <p>ユーザーID：<br>
   	<input type="text" name="USER_ID" maxlength="20" id="ID_USER_ID">
+  </p>
+
+  <p>名前： <br>
+  	<input type="text" name="NAME" maxlength = "20" id="ID_USER_NAME">
   </p>
 
   <p>パスワード：<br>
@@ -33,7 +33,7 @@
   </p>
 
 
-  <input type="submit" value="登録する(UserRegisterServletを起動)" id ="USE_REGISTER_SUBMIT">
+  <input type="submit" value="ユーザー登録する" id ="USE_REGISTER_SUBMIT">
   </form>
 
 

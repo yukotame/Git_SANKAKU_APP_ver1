@@ -29,7 +29,7 @@ List<ProjectDateDto> project_dato_list = (List<ProjectDateDto> )request.getAttri
 <body>
  <h1>参加可否入力画面</h1>
 
-  <form action="ParticipationServlet" method="">
+  <form action="ParticipationServlet" method="get">
 
     <p>ユーザー名：<%= userId %>  <%= userName %>
     	<input type="hidden" name="USER_ID"  value="<%= userId %>">

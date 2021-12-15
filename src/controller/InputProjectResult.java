@@ -1,7 +1,10 @@
+
 package controller;
 
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -57,21 +60,45 @@ public class InputProjectResult extends HttpServlet {
 
 			//リクエストパラメータからユーザー入力値を取得
 			String project_id = request.getParameter("PROJECT_ID");
-			String menu_id = request.getParameter("MENU_ID");
+			String menu_id = request.getParameter("MENU");
+			String search_id  = request.getParameter("SEARCH");//project_idで検索：１、全件検索：２
 
-
+			System.out.println("InputProjectResult project_id: " + project_id);
+			System.out.println("InputProjectResult menu_id: " + menu_id);
+			System.out.println("InputProjectResult search_id: " + search_id);
 
 			//入力されたプロジェクトIDと一致するプロジェクト情報を「PROJECT」テーブルから抽出
 			//List<ProjectInfoDto> list  = new ArrayList<ProjectInfoDto>();
-			ProjectInfoDto dto = new ProjectInfoDto();
 
-			ProjectResultBL logic =  new ProjectResultBL();
-			dto = logic.executeSelectProjectInfo(Integer.parseInt(project_id));
+			if(search_id.equals("1")) {
+				System.out.println("InputProjectResult search_id =１ ☆");
+				ProjectInfoDto dto = new ProjectInfoDto();
 
-			//抽出結果をプロジェクトリストをリクエストスコープに保存
-			request.setAttribute( "PROJECT_LIST" , dto );
-			//login_menu.jspから引き継いだメニューIDをリクエストスコープに保存
-			request.setAttribute( "MENU_ID" , menu_id );
+				ProjectResultBL logic =  new ProjectResultBL();
+				dto = logic.executeSelectProjectInfo(Integer.parseInt(project_id));
+
+				//抽出結果をプロジェクトリストをリクエストスコープに保存
+				request.setAttribute( "PROJECT_LIST" , dto );
+				//login_menu.jspから引き継いだメニューIDをリクエストスコープに保存
+				request.setAttribute( "MENU" , menu_id );
+				//プロジェクトの検索の方法により、検索結果の方法を分岐するためレクエストに格納
+				request.setAttribute( "SEARCH" , search_id );
+			}else if(search_id.equals("2")){
+				System.out.println("InputProjectResult search_id =２ ☆");
+				List<ProjectInfoDto> list  = new ArrayList<ProjectInfoDto>();
+
+				ProjectResultBL logic =  new ProjectResultBL();
+				list = logic.executeSelectProjectInfoALL();
+
+				//抽出結果をプロジェクトリストをリクエストスコープに保存
+				request.setAttribute( "PROJECT_LIST" , list );
+				//login_menu.jspから引き継いだメニューIDをリクエストスコープに保存
+				request.setAttribute( "MENU" , menu_id );
+				//プロジェクトの検索の方法により、検索結果の方法を分岐するためレクエストに格納
+				request.setAttribute( "SEARCH" , search_id );
+
+			}
+
 
 			//HTML文書（プロジェクト検索結果画面）の出力
 			//Viewにフォワード（フォワード先：project_result.jsp）

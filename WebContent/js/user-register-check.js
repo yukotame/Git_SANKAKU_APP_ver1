@@ -9,9 +9,6 @@
 
 
 
-	var alert=true;
-
-
 	elmSUBMIT.onclick = function(){
 
 	  var canSubmit = true;

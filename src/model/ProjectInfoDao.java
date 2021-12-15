@@ -7,7 +7,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.List;
 
 /**----------------------------------------------------------------------*
  *■■■ProjectInfoDaoクラス■■■
@@ -230,7 +229,9 @@ public class ProjectInfoDao {
 	 *戻り値：抽出データ（List<ProjectInfoDto>型）
 	 *----------------------------------------------------------------------**/
 
-	public List<ProjectInfoDto> doProjectSelectALL() {
+	public ArrayList<ProjectInfoDto> doProjectSelectALL() {
+
+		System.out.println("doProjectSelectALLメソッド開始：");
 		//-------------------------------------------
 		//JDBCドライバのロード
 		//-------------------------------------------
@@ -252,7 +253,7 @@ public class ProjectInfoDao {
 
 		//抽出データ（List型）格納用変数
 		//※最終的にreturnするため、tryブロック内で宣言してはいけないことに注意
-		List<ProjectInfoDto> dtoList = new ArrayList<ProjectInfoDto>();
+		ArrayList<ProjectInfoDto> dtoList = new ArrayList<ProjectInfoDto>();
 
 		try {
 
@@ -288,6 +289,9 @@ public class ProjectInfoDao {
 				dto.setProjectId(   rs.getInt(    "project_id"    ));
 				dto.setProjectName( rs.getString( "project_name"   ));
 				dto.setOriginatorId(rs.getString( "originator_id" ));
+
+				System.out.println("doProjectSelectALL project_id ：" + rs.getInt(    "project_id"    ));
+				System.out.println("doProjectSelectALL project_name ：" + rs.getString( "project_name"   ));
 
 				dtoList.add(dto);
 			}
@@ -341,6 +345,7 @@ public class ProjectInfoDao {
 	 *----------------------------------------------------------------------**/
 
 	public ProjectInfoDto doProjectSelect(int project_id) {
+		System.out.println("doProjectSelectメソッド開始：");
 		//-------------------------------------------
 		//JDBCドライバのロード
 		//-------------------------------------------
@@ -401,6 +406,10 @@ public class ProjectInfoDao {
 				dto.setProjectId(    rs.getInt(    "project_id"    ) );
 				dto.setProjectName(   rs.getString( "project_name"   ) );
 				dto.setOriginatorId(rs.getString( "originator_id" ));
+
+				System.out.println("doProjectSelect project_id ：" + rs.getInt(    "project_id"    ));
+				System.out.println("doProjectSelect project_name ：" + rs.getString( "project_name"   ));
+
 			}
 
 		} catch (SQLException e) {

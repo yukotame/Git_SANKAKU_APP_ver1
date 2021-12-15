@@ -32,7 +32,7 @@ List<UserParticipationDto> user_participation_list = (List<UserParticipationDto>
   <form action="ParticipationServlet" method="post">
 
 
-	//ユーザー名とプロジェクト名を出力
+	<!-- ユーザー名とプロジェクト名を出力 -->
     <p>ユーザー名：<%= userId %>  <%= userName %> </p>
 	<%
     for (int i = 0; i < user_participation_list.size(); i++) {
@@ -46,7 +46,7 @@ List<UserParticipationDto> user_participation_list = (List<UserParticipationDto>
 	<%}%>
 
 
-	//参加可否一覧テーブルの出力
+	<!--参加可否一覧テーブルの出力 -->
 	<table class="surbey_list" border=1>
 	    <tr bgcolor="#c0c0c0">
 	        <th>参加候補者</th>

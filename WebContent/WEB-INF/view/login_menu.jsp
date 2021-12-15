@@ -36,11 +36,12 @@ String UserId  = userInfoOnSession.getUserId();
   	<a href="InputCreateProject?MENU=1">プロジェクトの作成</a>
 
   <br>
-  	<a href="InputSelectMenu?MENU=2">参加可否入力</a>
+  	<a href="InputSelectProject?MENU=2">参加可否入力</a>
 
   <br>
-  	<a href="InputSelectMenu?MENU=3">参加可否確認</a>
+  	<a href="InputSelectProject?MENU=3">参加可否確認</a>
 
+  <br>
   <br>
 	<a href="ExecuteLogout">ログアウト</a>
 

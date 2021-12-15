@@ -45,12 +45,16 @@ public class InputSelectProject extends HttpServlet {
 
 			//project_result.jspでサーブレットの振り分けをするためMENU_IDを取得
 			String menu_id = request.getParameter("MENU");
-			request.setAttribute("MENU_ID" , menu_id) ;
+			request.setAttribute("MENU" , menu_id) ;
+
+			System.out.println("InputSelectProject menu_id: " + menu_id);
+
+
 
 
 			//HTML文書（プロジェクト検索画面）の出力
-			//Viewにフォワード（フォワード先：select_menu.jsp）
-			RequestDispatcher dispatch = request.getRequestDispatcher("/WEB-INF/view/select_menu.jsp");
+			//Viewにフォワード（フォワード先：select_project.jsp）
+			RequestDispatcher dispatch = request.getRequestDispatcher("/WEB-INF/view/select_project.jsp");
 			dispatch.forward(request, response);
 
 		} else {
