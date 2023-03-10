@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
  *■■■InputInitialMenuクラス■■■
  *概要：サーブレット
  *詳細：HTML文書（初期メニュー画面）を出力する。
+ *URL :http://localhost:8080/Sankaku_App/InputInitialMenu
  *----------------------------------------------------------------------**/
 
 @WebServlet("/InputInitialMenu")
